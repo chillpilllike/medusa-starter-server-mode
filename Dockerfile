@@ -14,7 +14,6 @@ RUN yarn build
 
 RUN yarn run predeploy
 
-CMD medusa migrations run && yarn start
 # Set the working directory to the Medusa server
 WORKDIR /app/.medusa/server
 
