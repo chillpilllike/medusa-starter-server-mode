@@ -4,14 +4,14 @@ WORKDIR /app
 
 COPY package.json ./
 
-RUN npm install
+RUN yarn install
 
 COPY . .
 
-RUN npm run build && npm run telemetry && npm run migrate
+RUN yarn build && yarn telemetry && yarn migrate
 
 ENV NODE_ENV=production
 
 EXPOSE 9000
 
-CMD ["npm", "run", "start"]
+CMD ["yarn", "start"]
