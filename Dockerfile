@@ -16,10 +16,13 @@ COPY . .
 RUN yarn global add @medusajs/medusa-cli
 
 # Build the Medusa application
-RUN yarn medusa build
+RUN npx medusa build
+
+# Set working directory to the Medusa server
+WORKDIR /app/.medusa/server
 
 # Expose the application's default port
 EXPOSE 9000
 
 # Run migrations and start the server at runtime
-CMD ["sh", "-c", "cd .medusa/server && yarn predeploy && yarn run start"]
+CMD ["sh", "-c", "npm run predeploy && npm run start"]
