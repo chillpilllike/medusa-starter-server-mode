@@ -12,4 +12,6 @@ RUN yarn build
 
 WORKDIR /.medusa/server
 
+COPY . .
+
 CMD yarn run predeploy && yarn run start
