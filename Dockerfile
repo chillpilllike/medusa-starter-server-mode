@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN yarn global add @medusajs/medusa-cli
+RUN yarn global add @medusajs/medusa-cli@1.3.23
 
 RUN yarn install
 
