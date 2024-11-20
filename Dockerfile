@@ -10,8 +10,6 @@ RUN yarn install
 
 RUN yarn build
 
-WORKDIR /.medusa/server
-
-COPY . .
+WORKDIR /app/.medusa/server
 
 CMD yarn run predeploy && yarn run start
