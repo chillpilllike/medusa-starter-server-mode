@@ -6,6 +6,8 @@ WORKDIR /app
 
 COPY . .
 
+RUN apt-get update
+
 RUN yarn global add @medusajs/medusa-cli
 
 RUN yarn
