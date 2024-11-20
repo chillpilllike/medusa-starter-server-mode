@@ -16,10 +16,10 @@ module.exports = defineConfig({
       cookieSecret: process.env.COOKIE_SECRET || "supersecret",
     },
   },
-  // admin: {
-    //disable: process.env.DISABLE_MEDUSA_ADMIN === "true", // Added admin.disable
-    //backendUrl: process.env.MEDUSA_BACKEND_URL, // Added admin.backendUrl
-  //},
+  admin: {
+    disable: process.env.DISABLE_MEDUSA_ADMIN === "true", // Added admin.disable
+    backendUrl: process.env.MEDUSA_BACKEND_URL, // Added admin.backendUrl
+  },
   modules: [
     {
       resolve: "@medusajs/medusa/cache-redis",
