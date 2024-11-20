@@ -1,27 +1,22 @@
-
-
-# Use a stable Node version
 FROM node:latest
 
-# Set working directory
-WORKDIR /app
+WORKDIR /app/medusa
 
-# Copy only package.json and yarn.lock first for dependency installation caching
-COPY package.json yarn.lock ./
-
-# Install dependencies
-RUN yarn install
-
-# Copy the rest of the application files
 COPY . .
+
+RUN apt-get update && apt-get install -y python3 python3-pip python-is-python3
 
 RUN yarn global add @medusajs/medusa-cli
 
-# Build the application
+RUN yarn
+
 RUN yarn build
 
+CMD medusa migrations run && yarn start
 # Set the working directory to the Medusa server
 WORKDIR /app/.medusa/server
+
+COPY . .
 
 # Run migrations and start the server
 CMD ["sh", "-c", "yarn run predeploy && yarn run start"]
