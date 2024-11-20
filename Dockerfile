@@ -15,6 +15,8 @@ RUN yarn install
 # Copy the rest of the application files
 COPY . .
 
+RUN yarn global add @medusajs/medusa-cli
+
 # Build the application
 RUN yarn build
 
