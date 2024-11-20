@@ -12,7 +12,7 @@ RUN yarn
 
 RUN yarn build
 
-RUN yarn run predeploy
+# RUN yarn run predeploy
 
 # Set the working directory to the Medusa server
 WORKDIR /app/.medusa/server
