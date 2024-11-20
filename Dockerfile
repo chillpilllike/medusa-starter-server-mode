@@ -12,6 +12,8 @@ RUN yarn
 
 RUN yarn build
 
+COPY package.json yarn.lock ./
+
 # RUN yarn run predeploy
 
 # Set the working directory to the Medusa server
