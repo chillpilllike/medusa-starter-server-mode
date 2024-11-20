@@ -18,7 +18,7 @@ RUN yarn global add @medusajs/medusa-cli
 RUN yarn install
 
 # Build the Medusa application
-RUN npx medusa build
+RUN yarn build
 
 # Set working directory to the Medusa server
 #WORKDIR /app/.medusa/server
