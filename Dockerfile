@@ -8,9 +8,7 @@ RUN yarn install
 
 COPY . .
 
-RUN yarn build && yarn telemetry && yarn migrate
-
-ENV NODE_ENV=production
+RUN yarn build && yarn migrate
 
 EXPOSE 9000
 
