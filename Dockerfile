@@ -8,7 +8,7 @@ COPY . .
 
 RUN yarn global add @medusajs/medusa-cli
 
-RUN yarn install
+# RUN yarn install
 
 RUN yarn build
 
