@@ -12,11 +12,11 @@ RUN yarn
 
 RUN yarn build
 
+RUN yarn run predeploy
+
 CMD medusa migrations run && yarn start
 # Set the working directory to the Medusa server
 WORKDIR /app/.medusa/server
 
-COPY . .
-
 # Run migrations and start the server
-CMD ["sh", "-c", "yarn run predeploy && yarn run start"]
+CMD ["sh", "-c", "yarn run start"]
