@@ -4,6 +4,8 @@ FROM node:latest
 # Set working directory
 WORKDIR /app
 
+RUN yarn
+
 RUN yarn build
 
 WORKDIR /.medusa/server
