@@ -8,4 +8,4 @@ RUN yarn build
 
 WORKDIR /.medusa/server
 
-RUN yarn predeploy && yarn run start
+CMD yarn run predeploy && yarn run start
