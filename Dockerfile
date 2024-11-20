@@ -4,7 +4,7 @@ FROM node:latest
 # Set working directory
 WORKDIR /app
 
-RUN yarn
+RUN yarn install
 
 RUN yarn build
 
