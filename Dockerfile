@@ -15,6 +15,8 @@ COPY . .
 # Install Medusa CLI globally (optional, for CLI usage within the container)
 RUN yarn global add @medusajs/medusa-cli
 
+RUN yarn global add @medusajs/admin-bundler
+
 # Build the Medusa application
 RUN npx medusa build
 
