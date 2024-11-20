@@ -4,7 +4,7 @@ WORKDIR /app/medusa
 
 COPY . .
 
-RUN apt-get update && apt-get install -y python3 python3-pip python-is-python3
+COPY package.json yarn.lock ./
 
 RUN yarn global add @medusajs/medusa-cli
 
@@ -16,6 +16,8 @@ RUN yarn build
 
 # Set the working directory to the Medusa server
 WORKDIR /app/.medusa/server
+
+COPY package.json yarn.lock ./
 
 # Run migrations and start the server
 CMD ["sh", "-c", "yarn run start"]
